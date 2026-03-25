@@ -1,25 +1,21 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import plantsImg from "@/assets/plants-category.jpg";
-import outdoorImg from "@/assets/outdoor-garden.jpg";
-import seedsImg from "@/assets/seeds-category.jpg";
-import potsImg from "@/assets/pots-display.jpg";
 import productData from "@/data/products.json";
 
-const categoryImages: Record<string, string> = {
-  plants: plantsImg,
-  "popular-plants": outdoorImg,
-  seeds: seedsImg,
-  "potsandplanters": potsImg,
-};
+// Category images are stored in: public/images/categories/<category-slug>.jpg
+// Upload these 4 images:
+//   public/images/categories/plants.jpg
+//   public/images/categories/seeds.jpg
+//   public/images/categories/pots.jpg
+//   public/images/categories/planters.jpg
 
 const CategoryShowcase = () => {
   const categories = productData.categories.map((cat) => ({
     name: cat.name,
     slug: cat.slug,
     count: `${cat.products.length}+ Items`,
-    image: categoryImages[cat.slug] || plantsImg,
+    image: `/images/categories/${cat.slug}.jpg`,
   }));
 
   return (
@@ -43,7 +39,14 @@ const CategoryShowcase = () => {
                 to={`/products?category=${cat.slug}`}
                 className="group block relative rounded-2xl overflow-hidden aspect-[3/4]"
               >
-                <img src={cat.image} alt={cat.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                <img
+                  src={cat.image}
+                  alt={cat.name}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 bg-muted"
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).src = "/images/plant-placeholder.svg";
+                  }}
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/20 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-6">
                   <p className="text-primary-foreground/70 text-xs font-medium uppercase tracking-wider mb-1">{cat.count}</p>

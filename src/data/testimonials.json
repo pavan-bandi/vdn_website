@@ -1,23 +1,23 @@
 [
   {
     "id": 1,
-    "name": "Rajesh Sharma",
-    "role": "Homeowner, Gurugram",
-    "content": "VDN Landscapers completely transformed our backyard into a paradise. The attention to detail and plant selection was exceptional. Our garden is now the envy of the neighbourhood!",
+    "name": "Risinia Builders",
+    "role": "Real Estate Developer, Hyderabad",
+    "content": "VDN Landscapes transformed our residential complex with stunning green spaces. Their attention to detail and plant selection was exceptional. The landscaping is now a key selling point for our properties!",
     "rating": 5
   },
   {
     "id": 2,
-    "name": "Priya Mehta",
-    "role": "Interior Designer",
-    "content": "I recommend VDN to all my clients for indoor plant solutions. Their nursery quality is outstanding and the team understands design aesthetics perfectly.",
+    "name": "Aloha Resorts",
+    "role": "Hospitality, Hyderabad",
+    "content": "The resort landscaping done by VDN is absolutely breathtaking. Guests constantly compliment the lush gardens and water features. Professional service from consultation to maintenance.",
     "rating": 5
   },
   {
     "id": 3,
-    "name": "Amit Verma",
-    "role": "Office Manager, Noida",
-    "content": "They designed our office green space beautifully. The plants are thriving and our employees love the natural ambiance. Professional service from start to finish.",
+    "name": "Srinidhi Projects",
+    "role": "Construction & Development",
+    "content": "We've partnered with VDN Landscapes on multiple projects and they consistently deliver outstanding results. Their skilled team and eco-friendly solutions make them our go-to landscaping partner.",
     "rating": 5
   }
 ]

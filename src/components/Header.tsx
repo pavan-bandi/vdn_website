@@ -8,10 +8,6 @@ import logo from "@/assets/logo.png";
 const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
-  const categories = productData.categories.map((c) => ({
-    name: c.name,
-    slug: c.slug,
-  }));
 
   const navItems = [
     { label: "Home", href: "/" },
@@ -25,7 +21,7 @@ const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border">
       <div className="container-wide mx-auto flex items-center justify-between h-16 px-4 lg:px-8">
         <Link to="/" className="flex items-center gap-2">
-          <img src={logo} alt="VDN Landscapers" className="h-10 w-auto" />
+          <img src={logo} alt={config.business_name} className="h-10 w-auto" />
         </Link>
 
         {/* Desktop nav */}

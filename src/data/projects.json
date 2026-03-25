@@ -1,23 +1,86 @@
 [
   {
     "id": 1,
-    "title": "Luxury Villa Garden",
-    "location": "Gurugram, Haryana",
-    "description": "Complete landscape transformation with water features, stone pathways, and lush tropical planting.",
-    "category": "Residential"
+    "title": "Candeur 40 Landscape",
+    "location": "Miyapur, Hyderabad",
+    "description": "Complete landscape transformation for this premium gated community with lush gardens, pathways, and automated irrigation systems.",
+    "client": "Candeur 40"
   },
   {
     "id": 2,
-    "title": "Corporate Office Green Space",
-    "location": "Noida, UP",
-    "description": "Biophilic design for a 5000 sq ft rooftop garden with automated irrigation systems.",
-    "category": "Commercial"
+    "title": "Aloha Resorts Green Spaces",
+    "location": "Hyderabad",
+    "description": "Resort landscaping with tropical gardens, water features, and curated plant installations for a tranquil guest experience.",
+    "client": "Aloha Resorts"
   },
   {
     "id": 3,
-    "title": "Farmhouse Landscape",
-    "location": "Manesar, Haryana",
-    "description": "Sprawling 2-acre farmhouse with native trees, flower beds, and a beautiful gazebo area.",
-    "category": "Residential"
+    "title": "Srinidhi Hill Park",
+    "location": "Hyderabad",
+    "description": "Sprawling community landscape with native trees, flower beds, lawns, and drain cell installations for sustainable water management.",
+    "client": "Srinidhi Projects"
+  },
+  {
+    "id": 4,
+    "title": "Risinia Builders Township",
+    "location": "Hyderabad",
+    "description": "Large-scale township landscaping with terrace gardens, vertical green walls, and ornamental plant installations across multiple blocks.",
+    "client": "Risinia Builders"
+  },
+  {
+    "id": 5,
+    "title": "Vajra Group Corporate Gardens",
+    "location": "Hyderabad",
+    "description": "Professional corporate entrance landscaping with decorative planters, manicured shrubs, and elegant floral arrangements.",
+    "client": "Vajra Group"
+  },
+  {
+    "id": 6,
+    "title": "Divya Shree Shakthi Villas",
+    "location": "Hyderabad",
+    "description": "Luxury villa landscaping with poolside gardens, tropical plants, bougainvillea, and ambient garden lighting.",
+    "client": "Divya Shree Shakthi"
+  },
+  {
+    "id": 7,
+    "title": "Ogha Wellness Retreat",
+    "location": "Hyderabad",
+    "description": "Zen-inspired wellness garden with bamboo, stepping stones, meditation areas, and tranquil water features.",
+    "client": "Ogha Wellness"
+  },
+  {
+    "id": 8,
+    "title": "Shiva Sai Myra Residences",
+    "location": "Hyderabad",
+    "description": "Modern high-rise entrance landscaping with decorative hedges, palm trees, and vibrant seasonal flower beds.",
+    "client": "Shiva Sai Myra"
+  },
+  {
+    "id": 9,
+    "title": "SMR Vinay Highlands",
+    "location": "Hyderabad",
+    "description": "Sprawling residential township with tree-lined avenues, central fountain garden, and manicured seasonal flowerbeds.",
+    "client": "SMR Vinay Highlands"
+  },
+  {
+    "id": 10,
+    "title": "Makuta Myspace Community",
+    "location": "Hyderabad",
+    "description": "Family-friendly community landscaping with children's play areas surrounded by lush gardens and walking trails.",
+    "client": "Makuta Myspace 1 & 2"
+  },
+  {
+    "id": 11,
+    "title": "Nebula Avaas Gardens",
+    "location": "Hyderabad",
+    "description": "Automated irrigation systems with tropical landscaping, green lawns, and curated ornamental plant collections.",
+    "client": "Nebula Avaas"
+  },
+  {
+    "id": 12,
+    "title": "ARR Infracon Grand Entry",
+    "location": "Hyderabad",
+    "description": "Grand entrance landscaping with avenue trees, decorative lighting, water fountain, and premium ornamental installations.",
+    "client": "ARR Infracon"
   }
 ]

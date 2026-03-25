@@ -1,11 +1,13 @@
 import { motion } from "framer-motion";
-import { Shield, Award, Truck, HeartHandshake } from "lucide-react";
+import { Shield, Award, Truck, HeartHandshake, Leaf, DollarSign } from "lucide-react";
 
 const reasons = [
-  { icon: Award, title: "Expert Horticulturists", desc: "Our team includes certified horticulturists with decades of experience in Indian climate gardening." },
-  { icon: Shield, title: "Quality Guarantee", desc: "Every plant comes with a health guarantee. We replace any plant that doesn't thrive within 30 days." },
-  { icon: Truck, title: "Pan-India Delivery", desc: "Careful packaging and reliable delivery across major cities. Plants arrive fresh and healthy." },
-  { icon: HeartHandshake, title: "After-Sale Support", desc: "Free care guidance and maintenance tips. We're just a WhatsApp message away for any plant queries." },
+  { icon: Award, title: "Experienced Team", desc: "20+ years of expertise with a 50+ strong skilled team delivering quality landscaping across Hyderabad and beyond." },
+  { icon: Shield, title: "Customized Designs", desc: "Every project is tailored to your space, lifestyle, and budget — no cookie-cutter solutions." },
+  { icon: DollarSign, title: "Affordable Pricing", desc: "Premium landscaping doesn't have to break the bank. Competitive rates with transparent quotes." },
+  { icon: Leaf, title: "Eco-Friendly Solutions", desc: "Sustainable practices, native plants, and water-efficient systems for greener, healthier landscapes." },
+  { icon: Truck, title: "End-to-End Service", desc: "From design consultation to installation and ongoing maintenance — we handle it all." },
+  { icon: HeartHandshake, title: "High-Quality Materials", desc: "Only the finest plants, soils, and materials sourced from trusted suppliers across India." },
 ];
 
 const WhyChooseUs = () => {
@@ -15,15 +17,15 @@ const WhyChooseUs = () => {
       <div className="container-narrow mx-auto relative">
         <div className="text-center mb-16">
           <p className="section-subtitle">Why VDN</p>
-          <h2 className="section-title">Why Choose Us</h2>
+          <h2 className="section-title">Why We Are Different</h2>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {reasons.map((r, i) => (
             <motion.div
               key={r.title}
-              initial={{ opacity: 0, x: i % 2 === 0 ? -20 : 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
               className="flex gap-5"

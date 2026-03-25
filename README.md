@@ -1,6 +1,6 @@
-# VDN Landscapers — vdnlandscapers.in
+# VDN Landscapes — vdnlandscapes.in
 
-A premium, data-driven brochure website for VDN Landscapers built with React, Vite, TypeScript, and Tailwind CSS. Products are managed via Excel and rendered dynamically from JSON.
+A premium, data-driven brochure website for VDN Landscapes built with React, Vite, TypeScript, and Tailwind CSS. Products are managed via Excel and rendered dynamically from JSON.
 
 ---
 
@@ -16,7 +16,7 @@ A premium, data-driven brochure website for VDN Landscapers built with React, Vi
 ```bash
 # Clone the repository
 git clone <your-repo-url>
-cd vdnlandscapers
+cd vdnlandscapes
 
 # Install dependencies
 npm install
@@ -105,7 +105,7 @@ Edit `src/data/config.json` to update business details:
 {
   "phone": "+91XXXXXXXXXX",
   "whatsapp": "https://wa.me/91XXXXXXXXXX",
-  "email": "contact@vdnlandscapers.in",
+  "email": "Venkatadurganursery2016@gmail.com",
   "address": "Your Business Address",
   "google_map_embed": "<iframe src='...'></iframe>"
 }

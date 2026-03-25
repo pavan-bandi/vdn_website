@@ -1,19 +1,35 @@
 {
-  "business_name": "VDN Landscapers",
-  "tagline": "Transforming Spaces Into Living Art",
-  "phone": "+919876543210",
-  "whatsapp": "https://wa.me/919876543210?text=Hi%2C%20I%20am%20interested%20in%20your%20landscaping%20services",
-  "email": "contact@vdnlandscapers.in",
-  "address": "123, Green Avenue, Sector 45, Gurugram, Haryana 122003",
-  "google_map_embed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3507.2!2d77.0266!3d28.4595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjjCsDI3JzM0LjIiTiA3N8KwMDEnMzUuOCJF!5e0!3m2!1sen!2sin!4v1",
+  "business_name": "VDN Landscapes",
+  "tagline": "Nature Crafted, Quality Delivered – Transforming your Outdoor Space",
+  "phone": "+91 9581012611",
+  "phone2": "+91 9704450218",
+  "whatsapp": "https://wa.me/919581012611?text=Hi%2C%20I%20am%20interested%20in%20your%20landscaping%20services",
+  "email": "Venkatadurganursery2016@gmail.com",
+  "address": "Radha Krishna Towers, Mayuri Nagar, Miyapur, Hyderabad - 500049",
+  "google_map_embed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3805.6!2d78.3569!3d17.4969!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb91f0e1d6c9b7%3A0x1!2sRadha+Krishna+Towers%2C+Mayuri+Nagar%2C+Miyapur%2C+Hyderabad!5e0!3m2!1sen!2sin!4v1",
+  "google_map_link": "https://maps.app.goo.gl/2Eqtc4uCnRkngtka8",
   "social": {
-    "instagram": "https://instagram.com/vdnlandscapers",
-    "facebook": "https://facebook.com/vdnlandscapers"
+    "instagram": "https://www.instagram.com/venkata_durga_nursery_hyd?utm_source=qr&igsh=MTVjYWc3OGd4c2czaA=="
   },
   "stats": {
-    "projects_completed": 250,
-    "happy_clients": 180,
+    "projects_completed": 100,
+    "happy_clients": 50,
     "plants_delivered": 15000,
-    "years_experience": 8
-  }
+    "years_experience": 20,
+    "team_members": 50
+  },
+  "prominent_clients": [
+    "Risinia Builders",
+    "Candeur 40",
+    "Vajra Group",
+    "Divya Shree Shakthi",
+    "SMR Vinay Highlands",
+    "ARR Infracon",
+    "Makuta Myspace 1 & 2",
+    "Srinidhi Projects",
+    "Nebula Avaas",
+    "Shiva Sai Myra",
+    "Ogha Wellness",
+    "Aloha Resorts"
+  ]
 }

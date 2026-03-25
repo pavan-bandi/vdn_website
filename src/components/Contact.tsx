@@ -1,4 +1,4 @@
-import { Phone, Mail, MapPin, MessageCircle, Instagram, Facebook } from "lucide-react";
+import { Phone, Mail, MapPin, MessageCircle, Instagram, ExternalLink } from "lucide-react";
 import config from "@/data/config.json";
 
 const Contact = () => {
@@ -21,7 +21,7 @@ const Contact = () => {
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="VDN Landscapers Location"
+              title="VDN Landscapes Location"
             />
           </div>
 
@@ -33,8 +33,11 @@ const Contact = () => {
               </div>
               <div>
                 <h3 className="font-semibold text-foreground mb-1">Call Us</h3>
-                <a href={`tel:${config.phone}`} className="text-muted-foreground hover:text-primary transition-colors">
+                <a href={`tel:${config.phone}`} className="text-muted-foreground hover:text-primary transition-colors block">
                   {config.phone}
+                </a>
+                <a href={`tel:${config.phone2}`} className="text-muted-foreground hover:text-primary transition-colors block">
+                  {config.phone2}
                 </a>
               </div>
             </div>
@@ -57,7 +60,7 @@ const Contact = () => {
               </div>
               <div>
                 <h3 className="font-semibold text-foreground mb-1">Email</h3>
-                <a href={`mailto:${config.email}`} className="text-muted-foreground hover:text-primary transition-colors">
+                <a href={`mailto:${config.email}`} className="text-muted-foreground hover:text-primary transition-colors text-sm break-all">
                   {config.email}
                 </a>
               </div>
@@ -68,17 +71,17 @@ const Contact = () => {
                 <MapPin className="w-5 h-5 text-primary-foreground" />
               </div>
               <div>
-                <h3 className="font-semibold text-foreground mb-1">Visit Us</h3>
+                <h3 className="font-semibold text-foreground mb-1">Corporate Office</h3>
                 <p className="text-muted-foreground text-sm">{config.address}</p>
+                <a href={config.google_map_link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-primary text-sm mt-1 hover:underline">
+                  <ExternalLink className="w-3 h-3" /> View on Google Maps
+                </a>
               </div>
             </div>
 
             <div className="flex gap-3 pt-4">
               <a href={config.social.instagram} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-xl bg-muted flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors">
                 <Instagram className="w-5 h-5" />
-              </a>
-              <a href={config.social.facebook} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-xl bg-muted flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors">
-                <Facebook className="w-5 h-5" />
               </a>
             </div>
 

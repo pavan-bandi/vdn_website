@@ -13,6 +13,7 @@ const Products = () => {
   const [search, setSearch] = useState("");
   const [careFilter, setCareFilter] = useState("all");
   const [sunlightFilter, setSunlightFilter] = useState("all");
+  const [subCategoryFilter, setSubCategoryFilter] = useState("all");
 
   const categories = productData.categories;
 
@@ -20,10 +21,14 @@ const Products = () => {
     return categories.flatMap((cat) => cat.products);
   }, []);
 
-  const filteredProducts = useMemo(() => {
-    let products = activeCategory === "all"
+  const currentCategoryProducts = useMemo(() => {
+    return activeCategory === "all"
       ? allProducts
       : categories.find((c) => c.slug === activeCategory)?.products || [];
+  }, [activeCategory]);
+
+  const filteredProducts = useMemo(() => {
+    let products = [...currentCategoryProducts];
 
     if (search) {
       const q = search.toLowerCase();
@@ -40,20 +45,26 @@ const Products = () => {
       products = products.filter((p) => p.sunlight === sunlightFilter);
     }
 
-    return products;
-  }, [activeCategory, search, careFilter, sunlightFilter]);
+    if (subCategoryFilter !== "all") {
+      products = products.filter((p) => p.sub_category === subCategoryFilter);
+    }
 
-  const careLevels = [...new Set(allProducts.map((p) => p.care_level).filter((c) => c !== "N/A"))];
-  const sunlightLevels = [...new Set(allProducts.map((p) => p.sunlight).filter((s) => s !== "N/A"))];
+    return products;
+  }, [currentCategoryProducts, search, careFilter, sunlightFilter, subCategoryFilter]);
+
+  const careLevels = [...new Set(currentCategoryProducts.map((p) => p.care_level).filter((c) => c !== "N/A"))];
+  const sunlightLevels = [...new Set(currentCategoryProducts.map((p) => p.sunlight).filter((s) => s !== "N/A"))];
+  const allSubCategories = [...new Set(currentCategoryProducts.map((p) => p.sub_category).filter((s) => s && s !== "N/A"))];
 
   const clearFilters = () => {
     setSearch("");
     setCareFilter("all");
     setSunlightFilter("all");
+    setSubCategoryFilter("all");
     setSearchParams({});
   };
 
-  const hasActiveFilters = search || careFilter !== "all" || sunlightFilter !== "all" || activeCategory !== "all";
+  const hasActiveFilters = search || careFilter !== "all" || sunlightFilter !== "all" || subCategoryFilter !== "all" || activeCategory !== "all";
 
   return (
     <div className="min-h-screen">
@@ -68,7 +79,7 @@ const Products = () => {
           {/* Category tabs */}
           <div className="flex flex-wrap gap-2 mb-6">
             <button
-              onClick={() => setSearchParams({})}
+              onClick={() => { setSearchParams({}); setSubCategoryFilter("all"); setCareFilter("all"); setSunlightFilter("all"); }}
               className={`px-4 py-2 rounded-xl text-sm font-medium transition-colors ${
                 activeCategory === "all" ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground hover:text-foreground"
               }`}
@@ -78,7 +89,7 @@ const Products = () => {
             {categories.map((cat) => (
               <button
                 key={cat.slug}
-                onClick={() => setSearchParams({ category: cat.slug })}
+                onClick={() => { setSearchParams({ category: cat.slug }); setSubCategoryFilter("all"); setCareFilter("all"); setSunlightFilter("all"); }}
                 className={`px-4 py-2 rounded-xl text-sm font-medium transition-colors ${
                   activeCategory === cat.slug ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground hover:text-foreground"
                 }`}
@@ -87,6 +98,25 @@ const Products = () => {
               </button>
             ))}
           </div>
+
+          {/* Sub-category quick filters */}
+          {allSubCategories.length > 1 && (
+            <div className="flex flex-wrap gap-2 mb-6">
+              {allSubCategories.map((type) => (
+                <button
+                  key={type}
+                  onClick={() => setSubCategoryFilter(subCategoryFilter === type ? "all" : type)}
+                  className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors border ${
+                    subCategoryFilter === type
+                      ? "bg-accent text-accent-foreground border-accent"
+                      : "bg-transparent text-muted-foreground border-border hover:text-foreground hover:border-foreground/30"
+                  }`}
+                >
+                  {type}
+                </button>
+              ))}
+            </div>
+          )}
 
           {/* Search + filters */}
           <div className="flex flex-wrap gap-3 mb-8">
@@ -101,27 +131,31 @@ const Products = () => {
               />
             </div>
 
-            <select
-              value={careFilter}
-              onChange={(e) => setCareFilter(e.target.value)}
-              className="px-4 py-2.5 rounded-xl bg-muted text-sm border border-border text-foreground focus:outline-none focus:ring-2 focus:ring-primary/20"
-            >
-              <option value="all">All Care Levels</option>
-              {careLevels.map((c) => (
-                <option key={c} value={c}>{c}</option>
-              ))}
-            </select>
+            {careLevels.length > 0 && (
+              <select
+                value={careFilter}
+                onChange={(e) => setCareFilter(e.target.value)}
+                className="px-4 py-2.5 rounded-xl bg-muted text-sm border border-border text-foreground focus:outline-none focus:ring-2 focus:ring-primary/20"
+              >
+                <option value="all">All Care Levels</option>
+                {careLevels.map((c) => (
+                  <option key={c} value={c}>{c}</option>
+                ))}
+              </select>
+            )}
 
-            <select
-              value={sunlightFilter}
-              onChange={(e) => setSunlightFilter(e.target.value)}
-              className="px-4 py-2.5 rounded-xl bg-muted text-sm border border-border text-foreground focus:outline-none focus:ring-2 focus:ring-primary/20"
-            >
-              <option value="all">All Sunlight</option>
-              {sunlightLevels.map((s) => (
-                <option key={s} value={s}>{s}</option>
-              ))}
-            </select>
+            {sunlightLevels.length > 0 && (
+              <select
+                value={sunlightFilter}
+                onChange={(e) => setSunlightFilter(e.target.value)}
+                className="px-4 py-2.5 rounded-xl bg-muted text-sm border border-border text-foreground focus:outline-none focus:ring-2 focus:ring-primary/20"
+              >
+                <option value="all">All Sunlight</option>
+                {sunlightLevels.map((s) => (
+                  <option key={s} value={s}>{s}</option>
+                ))}
+              </select>
+            )}
 
             {hasActiveFilters && (
               <button onClick={clearFilters} className="inline-flex items-center gap-1 px-4 py-2.5 rounded-xl text-sm text-destructive hover:bg-destructive/10 transition-colors">

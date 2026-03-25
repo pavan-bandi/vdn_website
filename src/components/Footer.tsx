@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Leaf } from "lucide-react";
+import { Leaf, Instagram } from "lucide-react";
 import config from "@/data/config.json";
 import productData from "@/data/products.json";
 
@@ -13,10 +13,10 @@ const Footer = () => {
           <div className="md:col-span-1">
             <div className="flex items-center gap-2 mb-4">
               <Leaf className="w-6 h-6" />
-              <span className="text-xl font-bold font-display">VDN Landscapers</span>
+              <span className="text-xl font-bold font-display">{config.business_name}</span>
             </div>
             <p className="text-primary-foreground/60 text-sm leading-relaxed">
-              Transforming spaces into living art. Premium landscaping and nursery services across India.
+              {config.tagline}. Premium landscaping and nursery services across India.
             </p>
           </div>
 
@@ -50,14 +50,20 @@ const Footer = () => {
             <h4 className="font-semibold mb-4 text-sm uppercase tracking-wider">Contact</h4>
             <ul className="space-y-2 text-sm text-primary-foreground/60">
               <li>{config.phone}</li>
-              <li>{config.email}</li>
+              <li>{config.phone2}</li>
+              <li className="break-all">{config.email}</li>
               <li>{config.address}</li>
             </ul>
+            <div className="flex gap-3 mt-4">
+              <a href={config.social.instagram} target="_blank" rel="noopener noreferrer" className="text-primary-foreground/60 hover:text-primary-foreground transition-colors">
+                <Instagram className="w-5 h-5" />
+              </a>
+            </div>
           </div>
         </div>
 
         <div className="border-t border-primary-foreground/10 mt-12 pt-8 text-center text-xs text-primary-foreground/40">
-          © {new Date().getFullYear()} VDN Landscapers. All rights reserved.
+          © {new Date().getFullYear()} {config.business_name}. All rights reserved.
         </div>
       </div>
     </footer>

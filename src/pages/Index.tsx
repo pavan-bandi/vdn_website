@@ -4,6 +4,7 @@ import Services from "@/components/Services";
 import CategoryShowcase from "@/components/CategoryShowcase";
 import OffersBanner from "@/components/OffersBanner";
 import Projects from "@/components/Projects";
+
 import WhyChooseUs from "@/components/WhyChooseUs";
 import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
@@ -20,6 +21,7 @@ const Index = () => {
       <CategoryShowcase />
       <OffersBanner />
       <Projects />
+      
       <WhyChooseUs />
       <Testimonials />
       <FAQ />

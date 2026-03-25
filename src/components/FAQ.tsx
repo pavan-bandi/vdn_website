@@ -1,40 +1,75 @@
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+import { useState } from "react";
+import { ChevronDown } from "lucide-react";
 
 const faqs = [
-  { q: "Do you deliver plants across India?", a: "Yes! We deliver healthy plants pan-India with careful packaging. Delivery charges vary by location and order size." },
-  { q: "How do I maintain my landscaped garden?", a: "We offer annual maintenance contracts. Our team visits regularly for pruning, fertilizing, pest control, and seasonal planting." },
-  { q: "Can I visit your nursery?", a: "Absolutely! Our nursery is open 7 days a week from 8 AM to 6 PM. Walk-ins are welcome, or book a guided tour via WhatsApp." },
-  { q: "What is the minimum order for landscaping projects?", a: "We take on projects of all sizes — from balcony gardens to multi-acre estates. Contact us for a free consultation and quote." },
-  { q: "Do you provide plant care guidance?", a: "Yes, every plant purchase comes with a care card. Our team is also available on WhatsApp for ongoing plant care support." },
-  { q: "How do I place a bulk order for my office or event?", a: "For bulk and corporate orders, reach out via WhatsApp or email. We offer special pricing and customized plant selections." },
+  {
+    id: 1,
+    question: "What areas do you serve?",
+    answer: "We provide landscaping services across Hyderabad and surrounding areas. Contact us for specific location availability."
+  },
+  {
+    id: 2,
+    question: "How often should I water my garden?",
+    answer: "Watering frequency depends on the plant type, season, and soil conditions. Most plants need watering 2-3 times a week in summer and 1-2 times in winter. Our drip irrigation systems optimize this automatically."
+  },
+  {
+    id: 3,
+    question: "Do you provide maintenance contracts?",
+    answer: "Yes, we offer flexible monthly, quarterly, and annual maintenance packages tailored to your garden's needs."
+  },
+  {
+    id: 4,
+    question: "What's the best time to start a garden?",
+    answer: "Spring and monsoon are ideal times to plant in Hyderabad. However, with proper care, gardens can thrive year-round. Our team can advise on seasonal planting."
+  },
+  {
+    id: 5,
+    question: "Can you work with small balcony spaces?",
+    answer: "Absolutely! We specialize in terrace and balcony gardens using vertical solutions, planters, and space-efficient designs."
+  },
+  {
+    id: 6,
+    question: "How much does a landscape design cost?",
+    answer: "Design costs vary based on space size and complexity. We offer free consultations to assess your property and provide a customized quote."
+  }
 ];
 
 const FAQ = () => {
+  const [open, setOpen] = useState<number | null>(null);
+
   return (
-    <section className="section-padding" style={{ background: "var(--gradient-sand)" }}>
-      <div className="container-narrow mx-auto">
-        <div className="text-center mb-16">
-          <p className="section-subtitle">Questions?</p>
-          <h2 className="section-title">Frequently Asked</h2>
+    <section className="py-16 bg-gray-50">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
+          <p className="text-gray-600">Find answers to common questions about our services and garden care.</p>
         </div>
 
-        <Accordion type="single" collapsible className="space-y-3">
-          {faqs.map((faq, i) => (
-            <AccordionItem key={i} value={`faq-${i}`} className="glass-card px-6 border-none">
-              <AccordionTrigger className="text-left font-semibold text-foreground hover:no-underline py-5">
-                {faq.q}
-              </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground text-sm leading-relaxed pb-5">
-                {faq.a}
-              </AccordionContent>
-            </AccordionItem>
+        <div className="space-y-4">
+          {faqs.map((faq) => (
+            <div
+              key={faq.id}
+              className="bg-white rounded-lg border border-gray-200 overflow-hidden hover:border-green-500 transition-colors"
+            >
+              <button
+                onClick={() => setOpen(open === faq.id ? null : faq.id)}
+                className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
+              >
+                <span className="font-medium text-gray-900">{faq.question}</span>
+                <ChevronDown
+                  size={20}
+                  className={`text-green-600 transition-transform ${open === faq.id ? "rotate-180" : ""}`}
+                />
+              </button>
+              
+              {open === faq.id && (
+                <div className="px-6 py-4 bg-gray-50 border-t border-gray-200">
+                  <p className="text-gray-700">{faq.answer}</p>
+                </div>
+              )}
+            </div>
           ))}
-        </Accordion>
+        </div>
       </div>
     </section>
   );

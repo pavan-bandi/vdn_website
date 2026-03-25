@@ -33,14 +33,9 @@ const ProductCard = ({ product }: { product: Product }) => {
         />
       </div>
       <div className="p-5">
-        <div className="flex items-start justify-between gap-2 mb-2">
-          <div>
-            <h3 className="font-semibold text-foreground font-display text-lg leading-tight">{product.name}</h3>
-            <p className="text-xs text-muted-foreground mt-0.5">{product.title}</p>
-          </div>
-          {product.price && (
-            <span className="text-lg font-bold text-primary whitespace-nowrap">₹{product.price}</span>
-          )}
+        <div className="mb-2">
+          <h3 className="font-semibold text-foreground font-display text-lg leading-tight">{product.name}</h3>
+          <p className="text-xs text-muted-foreground mt-0.5">{product.title}</p>
         </div>
 
         <p className="text-sm text-muted-foreground leading-relaxed mb-3 line-clamp-2">{product.description}</p>

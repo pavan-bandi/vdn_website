@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+  <rect width="400" height="400" fill="#f0ece4"/>
+  <g transform="translate(200,180)" opacity="0.3">
+    <path d="M0-60 C20-60 40-40 40-20 C40,10 20,30 0,50 C-20,30 -40,10 -40,-20 C-40,-40 -20,-60 0,-60Z" fill="#3d6b4f"/>
+    <path d="M-30,-30 C-10,-50 10,-50 30,-30 C50,-10 50,20 30,40 C10,20 -10,20 -30,40 C-50,20 -50,-10 -30,-30Z" fill="#4a8c5e" opacity="0.6"/>
+    <line x1="0" y1="50" x2="0" y2="90" stroke="#3d6b4f" stroke-width="3"/>
+  </g>
+  <text x="200" y="300" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#8a8070">Image coming soon</text>
+</svg>

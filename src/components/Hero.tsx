@@ -30,8 +30,10 @@ const Hero = () => {
           </motion.span>
 
           <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-primary-foreground leading-[1.1] mb-6">
-            Transforming Spaces Into{" "}
-            <span className="italic" style={{ color: "hsl(90, 60%, 70%)" }}>Living Art</span>
+            {config.tagline.split("–")[0]}
+            <span className="italic" style={{ color: "hsl(90, 60%, 70%)" }}>
+              {config.tagline.includes("–") ? `– ${config.tagline.split("–")[1].trim()}` : ""}
+            </span>
           </h1>
 
           <p className="text-lg md:text-xl text-primary-foreground/80 mb-10 max-w-xl font-light leading-relaxed">
@@ -57,9 +59,9 @@ const Hero = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
             {[
               { value: `${config.stats.projects_completed}+`, label: "Projects Completed" },
-              { value: `${config.stats.happy_clients}+`, label: "Happy Clients" },
-              { value: `${(config.stats.plants_delivered / 1000).toFixed(0)}K+`, label: "Plants Delivered" },
               { value: `${config.stats.years_experience}+`, label: "Years Experience" },
+              { value: `${config.stats.team_members}+`, label: "Skilled Team" },
+              { value: `${(config.stats.plants_delivered / 1000).toFixed(0)}K+`, label: "Plants Delivered" },
             ].map((stat) => (
               <div key={stat.label} className="text-center">
                 <div className="text-2xl md:text-3xl font-bold text-primary font-display">{stat.value}</div>
