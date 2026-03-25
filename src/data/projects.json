@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "title": "Luxury Villa Garden",
+    "location": "Gurugram, Haryana",
+    "description": "Complete landscape transformation with water features, stone pathways, and lush tropical planting.",
+    "category": "Residential"
+  },
+  {
+    "id": 2,
+    "title": "Corporate Office Green Space",
+    "location": "Noida, UP",
+    "description": "Biophilic design for a 5000 sq ft rooftop garden with automated irrigation systems.",
+    "category": "Commercial"
+  },
+  {
+    "id": 3,
+    "title": "Farmhouse Landscape",
+    "location": "Manesar, Haryana",
+    "description": "Sprawling 2-acre farmhouse with native trees, flower beds, and a beautiful gazebo area.",
+    "category": "Residential"
+  }
+]
