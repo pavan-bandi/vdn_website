@@ -27,6 +27,7 @@ const ProductCard = ({ product }: { product: Product }) => {
         <img
           src={getImagePath(product.image)}
           alt={product.name}
+          loading="lazy"
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
           onError={(e) => {
             (e.target as HTMLImageElement).src = getImagePath("/images/plant-placeholder.svg");

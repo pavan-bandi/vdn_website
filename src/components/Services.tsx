@@ -165,6 +165,7 @@ const Services = () => {
                     key={idx}
                     src={img}
                     alt={`${selectedService.title} example ${idx + 1}`}
+                    loading="lazy"
                     className="w-full rounded-xl aspect-[4/3] object-cover bg-muted"
                     onError={(e) => {
                       // Hide images that don't exist

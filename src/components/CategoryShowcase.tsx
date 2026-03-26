@@ -43,6 +43,7 @@ const CategoryShowcase = () => {
                 <img
                   src={cat.image}
                   alt={cat.name}
+                  loading="lazy"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 bg-muted"
                   onError={(e) => {
                     (e.target as HTMLImageElement).src = getImagePath("/images/plant-placeholder.svg");
