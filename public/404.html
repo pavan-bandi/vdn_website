@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>VDN Landscapes</title>
+    <script type="text/javascript">
+      // Redirect from GitHub Pages 404 to index.html with hash routing
+      const path = window.location.pathname;
+      const baseUrl = '/vdn_website/';
+      
+      // Remove base path and convert to hash routing
+      const relPath = path.startsWith(baseUrl) ? path.slice(baseUrl.length) : path;
+      const hashPath = relPath ? '#/' + relPath.replace(/^\//, '') : '#/';
+      
+      // Redirect to index.html with hash
+      window.location.replace(baseUrl + 'index.html' + hashPath + window.location.search + window.location.hash);
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
