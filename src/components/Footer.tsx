@@ -52,7 +52,10 @@ const Footer = () => {
               <li>{config.phone}</li>
               <li>{config.phone2}</li>
               <li className="break-all">{config.email}</li>
-              <li>{config.address}</li>
+              <li className="font-semibold text-primary-foreground mt-3 text-xs">CORPORATE OFFICE</li>
+              <li className="text-xs">{config.corporate_office}</li>
+              <li className="font-semibold text-primary-foreground mt-2 text-xs">BUSINESS ADDRESS</li>
+              <li className="text-xs">{config.business_address}</li>
             </ul>
             <div className="flex gap-3 mt-4">
               <a href={config.social.instagram} target="_blank" rel="noopener noreferrer" className="text-primary-foreground/60 hover:text-primary-foreground transition-colors">

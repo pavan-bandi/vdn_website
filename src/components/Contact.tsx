@@ -70,10 +70,13 @@ const Contact = () => {
               <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: "var(--gradient-earth)" }}>
                 <MapPin className="w-5 h-5 text-primary-foreground" />
               </div>
-              <div>
-                <h3 className="font-semibold text-foreground mb-1">Corporate Office</h3>
-                <p className="text-muted-foreground text-sm">{config.address}</p>
-                <a href={config.google_map_link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-primary text-sm mt-1 hover:underline">
+              <div className="flex-1">
+                <h3 className="font-semibold text-foreground mb-2">Corporate Office</h3>
+                <p className="text-muted-foreground text-sm mb-3">{config.corporate_office}</p>
+                
+                <h3 className="font-semibold text-foreground mb-2">Business Address</h3>
+                <p className="text-muted-foreground text-sm mb-2">{config.business_address}</p>
+                <a href={config.google_map_link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-primary text-sm hover:underline">
                   <ExternalLink className="w-3 h-3" /> View on Google Maps
                 </a>
               </div>
