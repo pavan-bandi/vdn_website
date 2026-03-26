@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import productData from "@/data/products.json";
+import { getImagePath } from "@/lib/utils";
 
 // Category images are stored in: public/images/categories/<category-slug>.jpg
 // Upload these 4 images:
@@ -15,7 +16,7 @@ const CategoryShowcase = () => {
     name: cat.name,
     slug: cat.slug,
     count: `${cat.products.length}+ Items`,
-    image: `/images/categories/${cat.slug}.jpg`,
+    image: getImagePath(`/images/categories/${cat.slug}.jpg`),
   }));
 
   return (
@@ -44,7 +45,7 @@ const CategoryShowcase = () => {
                   alt={cat.name}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 bg-muted"
                   onError={(e) => {
-                    (e.target as HTMLImageElement).src = "/images/plant-placeholder.svg";
+                    (e.target as HTMLImageElement).src = getImagePath("/images/plant-placeholder.svg");
                   }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/20 to-transparent" />

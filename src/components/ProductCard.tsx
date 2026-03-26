@@ -1,5 +1,6 @@
 import { Droplets, Sun, Leaf, MessageCircle } from "lucide-react";
 import config from "@/data/config.json";
+import { getImagePath } from "@/lib/utils";
 
 interface Product {
   id: string;
@@ -24,11 +25,11 @@ const ProductCard = ({ product }: { product: Product }) => {
     <div className="glass-card overflow-hidden group">
       <div className="aspect-square overflow-hidden bg-muted">
         <img
-          src={product.image}
+          src={getImagePath(product.image)}
           alt={product.name}
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
           onError={(e) => {
-            (e.target as HTMLImageElement).src = "/images/plant-placeholder.svg";
+            (e.target as HTMLImageElement).src = getImagePath("/images/plant-placeholder.svg");
           }}
         />
       </div>

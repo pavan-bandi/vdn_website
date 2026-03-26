@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { TreePine, Flower2, Building2, Droplets, Sun, Palette, Shovel, Leaf, Truck, Users, Gift, X } from "lucide-react";
+import { getImagePath } from "@/lib/utils";
 
 // Service gallery images are loaded from: public/images/services/<service-slug>/
 // Add 5-10 .jpg images per folder. Name them: 1.jpg, 2.jpg, 3.jpg, etc.
@@ -94,7 +95,7 @@ const Services = () => {
     // Try loading images 1.jpg through 10.jpg from the service folder
     const images: string[] = [];
     for (let i = 1; i <= service.imageCount; i++) {
-      images.push(`/images/services/${service.slug}/${i}.jpg`);
+      images.push(getImagePath(`/images/services/${service.slug}/${i}.jpg`));
     }
     setLoadedImages(images);
     setSelectedService(service);
