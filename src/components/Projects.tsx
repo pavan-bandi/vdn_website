@@ -73,6 +73,7 @@ const Projects = () => {
                   <img
                     src={projectImages[i]}
                     alt={project.title}
+                    loading="lazy"
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   {logo && (
@@ -80,6 +81,7 @@ const Projects = () => {
                       <img
                         src={logo}
                         alt={project.client}
+                        loading="lazy"
                         className="h-6 max-w-[80px] object-contain"
                       />
                     </div>
