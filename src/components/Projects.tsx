@@ -69,22 +69,21 @@ const Projects = () => {
                 transition={{ delay: (i % 3) * 0.15 }}
                 className="glass-card overflow-hidden group"
               >
-                <div className="aspect-[4/3] overflow-hidden relative">
-                  <img
-                    src={projectImages[i]}
-                    alt={project.title}
-                    loading="lazy"
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  {logo && (
-                    <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm rounded-lg px-3 py-2 shadow-md">
-                      <img
-                        src={logo}
-                        alt={project.client}
-                        loading="lazy"
-                        className="h-6 max-w-[80px] object-contain"
-                      />
-                    </div>
+                <div className="aspect-[4/3] overflow-hidden relative flex items-center justify-center bg-white/5">
+                  {logo ? (
+                    <img
+                      src={logo}
+                      alt={project.client}
+                      loading="lazy"
+                      className="w-4/5 h-auto max-h-[80%] object-contain"
+                    />
+                  ) : (
+                    <img
+                      src={projectImages[i]}
+                      alt={project.title}
+                      loading="lazy"
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
                   )}
                 </div>
                 <div className="p-6">

@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
@@ -13,6 +14,25 @@ import Footer from "@/components/Footer";
 import WhatsAppFab from "@/components/WhatsAppFab";
 
 const Index = () => {
+  useEffect(() => {
+    // Handle scroll to anchor on mount or hash change
+    const handleHashScroll = () => {
+      const hash = window.location.hash;
+      if (hash) {
+        const anchorId = hash.replace("#", "");
+        setTimeout(() => {
+          const element = document.getElementById(anchorId);
+          if (element) {
+            element.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        }, 100);
+      }
+    };
+
+    handleHashScroll();
+    window.addEventListener("hashchange", handleHashScroll);
+    return () => window.removeEventListener("hashchange", handleHashScroll);
+  }, []);
   return (
     <div className="min-h-screen">
       <Header />

@@ -49,19 +49,17 @@ const Products = () => {
       products = products.filter((p) => p.sub_category === subCategoryFilter);
     }
 
-    // Only deduplicate when viewing "All Products" - ensures unique results in search/filters
-    // When viewing a specific category, allow products to appear in multiple sub-categories
-    if (activeCategory === "all") {
-      const seenNames = new Set<string>();
-      products = products.filter((p) => {
-        const name = p.name.toLowerCase();
-        if (seenNames.has(name)) {
-          return false;
-        }
-        seenNames.add(name);
-        return true;
-      });
-    }
+    // Deduplicate based on product name to ensure unique results in search/filters
+    // Applies to both "All Products" and specific category views
+    const seenNames = new Set<string>();
+    products = products.filter((p) => {
+      const name = p.name.toLowerCase();
+      if (seenNames.has(name)) {
+        return false;
+      }
+      seenNames.add(name);
+      return true;
+    });
 
     return products;
   }, [currentCategoryProducts, search, careFilter, sunlightFilter, subCategoryFilter, activeCategory]);
