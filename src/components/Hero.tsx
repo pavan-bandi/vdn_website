@@ -9,7 +9,7 @@ const Hero = () => {
     <section className="relative min-h-screen sm:min-h-[90vh] flex items-center overflow-hidden pb-24 sm:pb-32">
       {/* Background */}
       <div className="absolute inset-0">
-        <img src={heroImage} alt="Beautiful landscaped garden" className="w-full h-full object-cover" />
+        <img src={heroImage} alt="Beautiful landscaped garden" className="w-full h-full object-cover" loading="eager" decoding="sync" />
         <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, hsla(152,45%,12%,0.82), hsla(35,30%,20%,0.55))" }} />
       </div>
 

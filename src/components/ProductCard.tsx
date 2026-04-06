@@ -28,7 +28,13 @@ const ProductCard = ({ product }: { product: Product }) => {
           src={getImagePath(product.image)}
           alt={product.name}
           loading="lazy"
+          decoding="async"
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          srcSet={`
+            ${getImagePath(product.image)}?w=300 300w,
+            ${getImagePath(product.image)}?w=600 600w
+          `}
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           onError={(e) => {
             (e.target as HTMLImageElement).src = getImagePath("/images/plant-placeholder.svg");
           }}

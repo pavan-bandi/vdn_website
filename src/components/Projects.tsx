@@ -75,6 +75,7 @@ const Projects = () => {
                       src={logo}
                       alt={project.client}
                       loading="lazy"
+                      decoding="async"
                       className="w-4/5 h-auto max-h-[80%] object-contain"
                     />
                   ) : (
@@ -82,6 +83,7 @@ const Projects = () => {
                       src={projectImages[i]}
                       alt={project.title}
                       loading="lazy"
+                      decoding="async"
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />
                   )}
